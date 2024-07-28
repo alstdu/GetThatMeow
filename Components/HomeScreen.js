@@ -4,7 +4,7 @@ import { View, Text, ImageBackground, StyleSheet, Button, TextInput, TouchableOp
 
 const image = '../assets/loginBackground.png';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
     const {
         control,
         handleSubmit,
@@ -19,7 +19,7 @@ export default function HomeScreen() {
     return (
         <View style={styles.container}>
             <ImageBackground source={require(image)} resizeMode="stretch" style={styles.image}>
-                <Text>Login Account</Text>
+                <Text>Login to Your Account</Text>
                 <Text>Welcome back to Get That Meow</Text>
                 <Controller
                     control={control}
@@ -36,12 +36,13 @@ export default function HomeScreen() {
                     )}
                     name="emailInput"
                 />
-                {errors.emailInput && <Text>This is required.</Text>}
+                {errors.emailInput && <Text>Email is required.</Text>}
 
                 <Controller
                     control={control}
                     rules={{
-                        maxLength: 100,
+                        required: true,
+                        maxLength: 50,
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
@@ -53,11 +54,13 @@ export default function HomeScreen() {
                     )}
                     name="passwordInput"
                 />
+                {errors.passwordInput && <Text>Password is required.</Text>}
 
-                <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+                <Button title="Log In" onPress={handleSubmit(onSubmit)} />
                 <View>
                     <Text>New here?</Text>
-                    <TouchableOpacity><Text>Create an Account</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={() =>
+        navigation.navigate("CreateAccount")} ><Text>Create an Account</Text></TouchableOpacity>
                 </View>
             </ImageBackground>
         </View>
