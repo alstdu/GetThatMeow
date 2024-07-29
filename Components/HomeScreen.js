@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#E66264',
         width: '75%',
         padding: 10,
-        borderRadius: 20,
+        borderRadius: 10,
     },
     loginText: {
         color: 'white',
