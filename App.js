@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 import HomeScreen from './Components/HomeScreen';
 import CreateAccount from './Components/CreateAccount';
+import CreateProfile from './Components/CreateProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="CreateAccount" component={CreateAccount} />
+        <Stack.Screen name="CreateProfile" component={CreateProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
