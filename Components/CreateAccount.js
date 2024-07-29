@@ -13,7 +13,8 @@ export default function CreateAccount({ navigation }) {
             passwordInput: "",
         },
     })
-    const onSubmit = (data) => console.log(data)
+    const onCreate = data => navigation.navigate("CreateProfile");
+
     return (
         <View style={styles.container}>
             <View style={styles.formContainer}>
@@ -56,7 +57,7 @@ export default function CreateAccount({ navigation }) {
                 />
                 {errors.passwordInput && <Text>Password is required.</Text>}
 
-                <TouchableOpacity onPress={handleSubmit(onSubmit)}><Text>Create</Text></TouchableOpacity>
+                <TouchableOpacity onPress={handleSubmit(onCreate)}><Text>Create</Text></TouchableOpacity>
                 <View>
                     <Text>Already Registered?</Text>
                     <TouchableOpacity onPress={() =>

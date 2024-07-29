@@ -15,7 +15,7 @@ export default function HomeScreen({ navigation }) {
             passwordInput: "",
         },
     })
-    const onSubmit = (data) => console.log(data)
+    const onLogin = data => navigation.navigate("MatchScreen");
     return (
         <View style={styles.container}>
             <ImageBackground source={require(image)} resizeMode="stretch" style={styles.image}>
@@ -56,7 +56,7 @@ export default function HomeScreen({ navigation }) {
                 />
                 {errors.passwordInput && <Text>Password is required.</Text>}
 
-                <Button title="Log In" onPress={handleSubmit(onSubmit)} />
+                <Button title="Log In" onPress={handleSubmit(onLogin)} />
                 <View>
                     <Text>New here?</Text>
                     <TouchableOpacity onPress={() =>
