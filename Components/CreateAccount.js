@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     formContainer: {
         backgroundColor: "white",
         height: "75%",
-        width: "75%",
+        width: "80%",
         padding: 25,
         borderRadius: 30,
     },
@@ -93,6 +93,6 @@ const styles = StyleSheet.create({
         borderRadius: 60 / 2,
         backgroundColor: "#D05F86",
         marginTop: -60, //I'm aware this is cursed but...
-        marginLeft: 93,
+        marginLeft: 100,
     },
 });
