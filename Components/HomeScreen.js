@@ -21,7 +21,7 @@ export default function HomeScreen({ navigation }) {
             <ImageBackground source={require(image)} resizeMode="stretch" style={styles.image}>
                 <View style={styles.innerContainer}>
                     <Text style={styles.title}>Login Account</Text>
-                    <Text style={styles.subtitle}>Welcome back to Get That Meow</Text>
+                    <Text style={styles.subtitle}>Welcome back to GetThatMeow</Text>
                     <Controller
                         control={control}
                         rules={{
