@@ -58,14 +58,15 @@ export default function HomeScreen({ navigation }) {
                         name="passwordInput"
                     />
                     {errors.passwordInput && <Text>Password is required.</Text>}
-
-                    <TouchableOpacity style={styles.login} onPress={handleSubmit(onLogin)}>
-                        <Text style={styles.loginText}>Login</Text>
-                    </TouchableOpacity>
-                    <View>
+                    <View style={styles.buttonContainer}>
+                        <TouchableOpacity style={styles.login} onPress={handleSubmit(onLogin)}>
+                            <Text style={styles.loginText}>Login</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.createAccountSection}>
                         <Text>New here?</Text>
                         <TouchableOpacity onPress={() =>
-                            navigation.navigate("CreateAccount")} ><Text>Create an Account</Text></TouchableOpacity>
+                            navigation.navigate("CreateAccount")} ><Text style={styles.createLink}> Create an Account</Text></TouchableOpacity>
                     </View>
                 </View>
             </ImageBackground>
@@ -80,9 +81,9 @@ const styles = StyleSheet.create({
     innerContainer: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         padding: 20,
-        height: '50%'
+        height: '100%'
     },
     image: {
         flex: 1,
@@ -94,7 +95,12 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 14,
-        marginBottom: 32,
+        marginBottom: 36,
+    },
+    buttonContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     login: {
         backgroundColor: '#E66264',
@@ -111,5 +117,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         height: 50,
         borderRadius: 15,
+        marginVertical: 15,
+        padding: 3,
     },
+    createAccountSection: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    createLink: {
+        fontWeight: 'bold'
+    }
 });
