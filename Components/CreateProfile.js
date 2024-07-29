@@ -18,7 +18,6 @@ export default function CreateProfile({ navigation }) {
                     <View style={styles.aboveGradientInfo}>
                         <TextInput style={styles.input} placeholder="Name" />
                         <TextInput style={styles.input} placeholder="Age" />
-                        <View style={styles.input}>
                             <Picker
                                 selectedValue={selectedBreed}
                                 onValueChange={(itemValue, itemIndex) => setSelectedBreed(itemValue)}
@@ -26,11 +25,10 @@ export default function CreateProfile({ navigation }) {
                                 <Picker.Item label="Breed" value="" />
                                 <Picker.Item label="Russian Blue" value="breed1" />
                             </Picker>
-                        </View>
                     </View>
                 </View>
-                <LinearGradient colors={['#E66264', '#BA5CA7']}>
-                    <View style={styles.section}>
+                <LinearGradient colors={['#E66264', '#BA5CA7']} style={styles.gradientSection}>
+                    <View style={[styles.section, styles.cardBackground, styles.cardPositioning]}>
                         <Text style={styles.sectionTitle}>Physical Characteristics</Text>
                         <TextInput style={styles.input} placeholder="Color" />
                         <TextInput style={styles.input} placeholder="Weight" />
@@ -45,8 +43,7 @@ export default function CreateProfile({ navigation }) {
                         </Picker>
                     </View>
 
-                    {/* Add other sections as needed */}
-                    <View style={styles.section}>
+                    <View style={[styles.section, styles.cardBackground, styles.cardPositioning]}>
                         <Text style={styles.sectionTitle}>Personality Traits</Text>
                         <View style={styles.checkboxContainer}>
                             <TouchableOpacity style={styles.checkbox}><Text>Playful</Text></TouchableOpacity>
@@ -57,7 +54,7 @@ export default function CreateProfile({ navigation }) {
                         </View>
                     </View>
 
-                    <View style={styles.section}>
+                    <View style={[styles.section, styles.cardBackground, styles.cardPositioning]}>
                         <Text style={styles.sectionTitle}>Health Information</Text>
                         <TouchableOpacity style={styles.button}>
                             <Text style={styles.buttonText}>Vaccinations</Text>
@@ -65,14 +62,14 @@ export default function CreateProfile({ navigation }) {
                         <TextInput style={styles.input} placeholder="Medical History" />
                     </View>
 
-                    <View style={styles.section}>
+                    <View style={[styles.section, styles.cardBackground, styles.cardPositioning]}>
                         <Text style={styles.sectionTitle}>Owner’s Information</Text>
                         <TextInput style={styles.input} placeholder="Owner's Name" />
                         <TextInput style={styles.input} placeholder="Contact Info" />
                         <TextInput style={styles.input} placeholder="Location" />
                     </View>
 
-                    <View style={styles.section}>
+                    <View style={[styles.section, styles.cardBackground, styles.cardPositioning]}>
                         <Text style={styles.sectionTitle}>Preferences</Text>
                         <TextInput style={styles.input} placeholder="Looking for" />
                         <Picker
@@ -117,15 +114,36 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 20,
+        gap: 10,
+    },
+    gradientSection: {
+        padding: 10,
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 10
+    },
+    cardPositioning: {
+        flexBasis: '40%',
+        width: '40%',
+        flexGrow: 1,
+        overflow: 'hidden',
     },
     aboveGradientInfo: {
         display: 'flex',
         flexDirection: 'column',
+        flexGrow: 1,
+    },
+    cardBackground: {
+        backgroundColor: 'white',
+        padding: 20,
+        borderRadius: 20,
     },
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 10,
+        color: '#E66264',
     },
     input: {
         borderWidth: 1,
@@ -133,7 +151,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         padding: 10,
         marginVertical: 5,
-        width: 200,
+        width: '100%',
     },
     photoContainer: {
         width: 100,
@@ -154,7 +172,7 @@ const styles = StyleSheet.create({
     },
     checkbox: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#E66264',
         borderRadius: 5,
         padding: 10,
         marginVertical: 5,
@@ -173,20 +191,21 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 20,
+        flexBasis: '100%'
     },
     saveButton: {
-        backgroundColor: '#f00',
-        padding: 15,
-        borderRadius: 5,
+        backgroundColor: '#E66264',
+        padding: 20,
+        borderRadius: 10,
         alignItems: 'center',
     },
     saveButtonText: {
         color: '#fff',
     },
     cancelButton: {
-        backgroundColor: '#ccc',
-        padding: 15,
-        borderRadius: 5,
+        backgroundColor: '#999999',
+        padding: 20,
+        borderRadius: 10,
         alignItems: 'center',
     },
     cancelButtonText: {
