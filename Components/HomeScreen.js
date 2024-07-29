@@ -19,48 +19,54 @@ export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <ImageBackground source={require(image)} resizeMode="stretch" style={styles.image}>
-                <Text>Login to Your Account</Text>
-                <Text>Welcome back to Get That Meow</Text>
-                <Controller
-                    control={control}
-                    rules={{
-                        required: true,
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput
-                            placeholder="Email"
-                            onBlur={onBlur}
-                            onChangeText={onChange}
-                            value={value}
-                        />
-                    )}
-                    name="emailInput"
-                />
-                {errors.emailInput && <Text>Email is required.</Text>}
+                <View style={styles.innerContainer}>
+                    <Text style={styles.title}>Login Account</Text>
+                    <Text style={styles.subtitle}>Welcome back to Get That Meow</Text>
+                    <Controller
+                        control={control}
+                        rules={{
+                            required: true,
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <TextInput
+                                placeholder="Email"
+                                onBlur={onBlur}
+                                onChangeText={onChange}
+                                value={value}
+                                style={styles.input}
+                            />
+                        )}
+                        name="emailInput"
+                    />
+                    {errors.emailInput && <Text>Email is required.</Text>}
 
-                <Controller
-                    control={control}
-                    rules={{
-                        required: true,
-                        maxLength: 50,
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput
-                            placeholder="Password"
-                            onBlur={onBlur}
-                            onChangeText={onChange}
-                            value={value}
-                        />
-                    )}
-                    name="passwordInput"
-                />
-                {errors.passwordInput && <Text>Password is required.</Text>}
+                    <Controller
+                        control={control}
+                        rules={{
+                            required: true,
+                            maxLength: 50,
+                        }}
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <TextInput
+                                placeholder="Password"
+                                onBlur={onBlur}
+                                onChangeText={onChange}
+                                value={value}
+                                style={styles.input}
+                            />
+                        )}
+                        name="passwordInput"
+                    />
+                    {errors.passwordInput && <Text>Password is required.</Text>}
 
-                <Button title="Log In" onPress={handleSubmit(onLogin)} />
-                <View>
-                    <Text>New here?</Text>
-                    <TouchableOpacity onPress={() =>
-        navigation.navigate("CreateAccount")} ><Text>Create an Account</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.login} onPress={handleSubmit(onLogin)}>
+                        <Text style={styles.loginText}>Login</Text>
+                    </TouchableOpacity>
+                    <View>
+                        <Text>New here?</Text>
+                        <TouchableOpacity onPress={() =>
+                            navigation.navigate("CreateAccount")} ><Text>Create an Account</Text></TouchableOpacity>
+                    </View>
                 </View>
             </ImageBackground>
         </View>
@@ -71,8 +77,39 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    innerContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        padding: 20,
+        height: '50%'
+    },
     image: {
         flex: 1,
         justifyContent: 'center',
+    },
+    title: {
+        fontWeight: 'bold',
+        fontSize: 32,
+    },
+    subtitle: {
+        fontSize: 14,
+        marginBottom: 32,
+    },
+    login: {
+        backgroundColor: '#E66264',
+        width: '75%',
+        padding: 10,
+        borderRadius: 20,
+    },
+    loginText: {
+        color: 'white',
+        textAlign: 'center'
+    },
+    input: {
+        borderColor: '#E66264',
+        borderWidth: 1,
+        height: 50,
+        borderRadius: 15,
     },
 });
