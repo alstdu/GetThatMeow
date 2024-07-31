@@ -18,6 +18,14 @@ function LogoTitleWhite() {
   );
 }
 
+function LogoTitleMain() {
+  return (
+    <Image
+      style={{ width: 90, height: 70, alignContent: "center" }}
+      source={require('./assets/logoMain.png')}
+    />
+  );
+}
 
 export default function App() {
   return (
@@ -35,10 +43,10 @@ export default function App() {
         />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{
           headerStyle: {
-            backgroundColor: '#E66264',
+            backgroundColor: '#FFF',
           },
-          headerTintColor: '#FFF',
-          headerTitle: (props) => <LogoTitleWhite {...props} />, headerTitleAlign: 'center',
+          headerTintColor: '#E66264',
+          headerTitle: (props) => <LogoTitleMain {...props} />, headerTitleAlign: 'center',
         }}
         />
       </Stack.Navigator>
