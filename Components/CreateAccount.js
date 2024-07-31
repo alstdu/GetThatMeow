@@ -19,7 +19,7 @@ export default function CreateAccount({ navigation }) {
         <View style={styles.container}>
             <View style={styles.formContainer}>
                 <View style={styles.circle}>
-                    <Image source={{ uri: 'https://example.com/logo.png' }} style={styles.logo} />
+                    <Image source={require('../assets/logoWhite.png')} style={styles.logo} />
                 </View>
                 <Text style={styles.title}>Create account</Text>
                 <Text style={styles.subtitle}>Get started on your pet's love life</Text>
