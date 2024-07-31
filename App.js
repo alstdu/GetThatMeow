@@ -5,6 +5,7 @@ import { StyleSheet, Image } from 'react-native';
 import HomeScreen from './Components/HomeScreen';
 import CreateAccount from './Components/CreateAccount';
 import CreateProfile from './Components/CreateProfile';
+import ProfileScreen from './Components/profileScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,16 +23,24 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="CreateAccount" component={CreateAccount} options={{ headerShown: false }} />
         <Stack.Screen name="CreateProfile" component={CreateProfile} options={{
-           headerStyle: {
+          headerStyle: {
             backgroundColor: '#E66264',
           },
           headerTintColor: '#FFF',
-          headerTitle: (props) => <LogoTitleWhite {...props} />, headerTitleAlign: 'center', 
+          headerTitle: (props) => <LogoTitleWhite {...props} />, headerTitleAlign: 'center',
         }}
-          />
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{
+          headerStyle: {
+            backgroundColor: '#E66264',
+          },
+          headerTintColor: '#FFF',
+          headerTitle: (props) => <LogoTitleWhite {...props} />, headerTitleAlign: 'center',
+        }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

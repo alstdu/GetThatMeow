@@ -84,7 +84,7 @@ export default function CreateProfile({ navigation }) {
                     </View>
 
                     <View style={styles.buttonContainer}>
-                        <TouchableOpacity style={styles.saveButton}>
+                        <TouchableOpacity style={styles.saveButton} onPress={() => navigation.navigate("Profile")}>
                             <Text style={styles.saveButtonText}>Save</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.cancelButton}>
