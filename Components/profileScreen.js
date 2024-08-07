@@ -56,9 +56,7 @@ const styles = StyleSheet.create({
     card: {
         borderRadius: 10,
         overflow: 'hidden',
-        margin: 10,
-        borderColor: '#ddd',
-        borderWidth: 1,
+        margin: 0,
         backgroundColor: '#fff',
         elevation: 2,
     },
@@ -109,4 +107,7 @@ const styles = StyleSheet.create({
         gap: 10,
         flex: 1,
     },
+    textContainer: {
+        padding: 15,
+    }
 });
