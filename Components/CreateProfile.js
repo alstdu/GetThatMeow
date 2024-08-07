@@ -18,13 +18,13 @@ export default function CreateProfile({ navigation }) {
                     <View style={styles.aboveGradientInfo}>
                         <TextInput style={styles.input} placeholder="Name" />
                         <TextInput style={styles.input} placeholder="Age" />
-                            <Picker
-                                selectedValue={selectedBreed}
-                                onValueChange={(itemValue, itemIndex) => setSelectedBreed(itemValue)}
-                            >
-                                <Picker.Item label="Breed" value="" />
-                                <Picker.Item label="Russian Blue" value="breed1" />
-                            </Picker>
+                        <Picker
+                            selectedValue={selectedBreed}
+                            onValueChange={(itemValue, itemIndex) => setSelectedBreed(itemValue)}
+                        >
+                            <Picker.Item label="Breed" value="" />
+                            <Picker.Item label="Russian Blue" value="breed1" />
+                        </Picker>
                     </View>
                 </View>
                 <LinearGradient colors={['#E66264', '#BA5CA7']} style={styles.gradientSection}>
@@ -84,7 +84,8 @@ export default function CreateProfile({ navigation }) {
                     </View>
 
                     <View style={styles.buttonContainer}>
-                        <TouchableOpacity style={styles.saveButton} onPress={() => navigation.navigate("Profile")}>
+                        <TouchableOpacity style={styles.saveButton}
+                            onPress={() => navigation.navigate('ProfileTab', { screen: 'Profile' })}>
                             <Text style={styles.saveButtonText}>Save</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.cancelButton}>
