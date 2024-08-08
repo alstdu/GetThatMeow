@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { View, Text, ImageBackground, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 
-const image = require('../assets/loginBackground.png');
+const image = require('../assets/loginBackground.png'); // Update the path to your image
 
 export default function HomeScreen({ navigation }) {
     const {
@@ -15,7 +15,7 @@ export default function HomeScreen({ navigation }) {
             passwordInput: "",
         },
     });
-    const onLogin = data => navigation.navigate("MatchScreen");
+    const onLogin = data => navigation.navigate('ProfileTab', { screen: 'Profile' });
 
     return (
         <View style={styles.container}>
